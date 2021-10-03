@@ -1,0 +1,16 @@
+.card{
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 80px;
+    display: inline-block;
+    /* justify-content: flex-start; */
+    align-items:center;
+    background:linear-gradient(45deg,#254245,#1c2436) ;
+    transition: 0.5s;
+  }
+  .card:hover{
+    height: 400px;
+  }
