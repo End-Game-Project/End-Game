@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 
 class App extends React.Component {
+  
 
   render() {
     const { isAuthenticated } = this.props.auth0;
@@ -31,4 +32,4 @@ class App extends React.Component {
   }
 }
 
-export default withAuth0(App);
+export default withAuth0(App); 
