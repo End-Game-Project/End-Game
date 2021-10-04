@@ -1,0 +1,21 @@
+#copyright{
+    margin-left: 30px;
+    margin-right: 1100px ;
+    font-family: fantasy;
+    color: white;
+    clear:both;
+
+}
+
+#footImg{
+    width: 150px;
+    height: 150px;
+}
+#Footer {
+    clear:both;
+    position:relative;
+    bottom:0;
+    width:0%;
+    height:10px;   /* Height of the footer */
+    background-color: #161B22;
+} 
