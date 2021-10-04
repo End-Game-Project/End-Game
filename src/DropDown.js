@@ -3,6 +3,7 @@ import React from 'react'
 import axios from 'axios'
 import Store from './components/Store'
 import Dropdown from 'react-bootstrap/Dropdown'
+import './dropDown.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends React.Component {
@@ -46,7 +47,7 @@ let num = 1;
 
     return (
       <div>
-        <h2>Store page </h2>
+        <h2 id='Storeh2'>Store page </h2>
 
           <Dropdown >
                     <Dropdown.Toggle variant="success" id="dropdown-basic" >

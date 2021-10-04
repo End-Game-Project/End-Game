@@ -1,14 +1,14 @@
 h5{
     color: azure;
 }
-img{
-    width: 90%;
-    height: 500px;
+#Item img{
+    width: 97%;
+    height: 800px;
     /* border-radius: 30%; */
 }
 
 #Item{
-    margin-top: 25px;
+    margin: 25px;
 }
 body{
     background-color: #0D1117;

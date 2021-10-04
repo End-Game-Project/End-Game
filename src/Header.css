@@ -1,0 +1,46 @@
+#headImg{
+    width: 70px;
+    height: 70px;
+}
+
+#title{
+    font-size: 30px;
+    font-family: fantasy;
+    color: white;
+}
+
+#home{
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: fantasy;
+
+}
+#paddin{
+    padding-left: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: fantasy;
+
+}
+#login{
+    text-decoration: none;
+    margin-right: -200px;
+}
+#headDiv{
+    background-color: #161B22;
+}
+#pro{
+    padding-left: 10px;
+margin-right: 1350px ;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: fantasy;
+}
+
+/* #nav{
+    border: 1px solid red;
+} */
