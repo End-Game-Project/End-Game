@@ -18,8 +18,8 @@ class HomePahe extends React.Component {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h5>Strategy  </h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <h5>Strategy</h5>
+            <Button href={"./Store"} variant="outline-primary"  onClick={this.props.storeFun}>Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -41,7 +41,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Moba</h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -52,7 +52,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >MMO</h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -63,7 +63,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >MMORPG</h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -74,7 +74,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Card Games</h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -85,7 +85,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Racing </h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -95,8 +95,8 @@ class HomePahe extends React.Component {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h5 >Fighting  </h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <h5 >Fighting</h5>
+            <Button name="Fighting" href={"./Store"} variant="outline-primary" onClick={this.props.storeFun}>Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  

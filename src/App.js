@@ -5,37 +5,97 @@ import Footer from './Footer';
 import Profile from './Profile';
 import './App.css'
 import HomePage from './components/HomePage'
-// import Store from './components/Store'
+import axios from 'axios'
 import DropDown from './DropDown'
-// import LoginButton from './components/LoginButten.js'
-
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import RandomGames from './components/RandomGames';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      gameResult1: [],
+      fullgame: [],
+      searchQuery: ''
+
+    }
+
+  }
+
+  storeFun = async (e) => {
+    e.preventDefault();
+    console.log('asdasdasdasdasdasdasdasd');
+    await this.setState({
+      searchQuery: e.target.name
+    })
+    
+    if(this.state.searchQuery ==='ALL'){
+      
+      let gameUrl = `http://localhost:3002/store`
+      let gameResult = await axios.get(gameUrl)
+      console.log(gameResult.data);
   
+      console.log(gameUrl);
+  
+  
+      this.setState({
+  
+        gameResult1: gameResult.data,
+  
+      })
+    }
+    else{
+
+      let gameUrl = `http://localhost:3002/getGame?category=${this.state.searchQuery}`
+      let gameResult = await axios.get(gameUrl)
+      console.log(gameResult.data);
+  
+      console.log(gameUrl);
+  
+  
+      this.setState({
+  
+        gameResult1: gameResult.data,
+  
+      })
+      console.log(gameResult.data);
+    }
+
+    console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
+  }
+
+  addToFav = async (e) => {
+    e.preventDefault();
+  
+  
+  }
 
   render() {
-    // const { isAuthenticated } = this.props.auth0;
-    return(
+    return (
       <>
         <Router>
-            <Header />
-            <Switch>
+          <Header />
+          <Switch>
             <Route exact path="/">
-            <HomePage/>
-              </Route>
-              <Route exact path="/profile">
-              <Profile/>
-              </Route>
-              <Route exact path="/Store">
-              <DropDown/>
-              </Route>
-            </Switch>
-            <Footer />
+              <HomePage  storeFun={this.storeFun}/>
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/Store">
+        
+
+              <section ><RandomGames /> </section>
+              <br></br>
+              <section ><DropDown storeFun={this.storeFun} gameResult1={this.state.gameResult1} /> </section>
+            </Route>
+          </Switch>
+          <Footer />
         </Router>
       </>
     );

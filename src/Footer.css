@@ -3,6 +3,8 @@
     margin-right: 1100px ;
     font-family: fantasy;
     color: white;
+    clear:both;
+
 }
 
 #footImg{
@@ -10,7 +12,8 @@
     height: 150px;
 }
 #Footer {
-    position:absolute;
+    clear:both;
+    position:relative;
     bottom:0;
     width:0%;
     height:10px;   /* Height of the footer */
