@@ -13,8 +13,8 @@ class App extends React.Component {
 
     this.state = {
       gameResult1: [],
-      searchQuery:''
-    
+      searchQuery: ''
+
     }
 
   }
@@ -27,62 +27,55 @@ class App extends React.Component {
     let gameUrl = `http://localhost:3002/getGame?category=${this.state.searchQuery}`
     let gameResult = await axios.get(gameUrl)
     console.log(gameResult.data);
-    
+
     console.log(gameUrl);
-    
-    
+
+
     this.setState({
-      
+
       gameResult1: gameResult.data,
-      
+
     })
     console.log(gameResult.data);
-    
-    console.log('qqqqqqqqqqqqqqqqqqqqqq'+this.state.gameResult1);
+
+    console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
   }
 
 
- render() {
-let num = 1;
+  render() {
+    let num = 1;
 
     return (
       <div>
         <h2 id='Storeh2'>Store page </h2>
 
-          <Dropdown >
-                    <Dropdown.Toggle variant="success" id="dropdown-basic" >
-                        Category
-                    </Dropdown.Toggle>
+        <Dropdown >
+          <Dropdown.Toggle variant="success" id="dropdown-basic" >
+            Category
+          </Dropdown.Toggle>
 
-                    <Dropdown.Menu onClick={this.storeFun}>
-                        <Dropdown.Item name="MMO" >MMO</Dropdown.Item>
-                        <Dropdown.Item name="MMORPG" >MMORPG</Dropdown.Item>
-                        <Dropdown.Item name="Shooter" >Shooter</Dropdown.Item>
-                        <Dropdown.Item name="Strategy" >Strategy</Dropdown.Item>
-                        <Dropdown.Item name="Moba" >Moba</Dropdown.Item>
-                        <Dropdown.Item name="Card Games" >Card Games</Dropdown.Item>
-                        <Dropdown.Item name="Racing" >Racing</Dropdown.Item>
-                        <Dropdown.Item name="Fighting" >Fighting</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+          <Dropdown.Menu onClick={this.storeFun}>
+            <Dropdown.Item name="MMO" >MMO</Dropdown.Item>
+            <Dropdown.Item name="MMORPG" >MMORPG</Dropdown.Item>
+            <Dropdown.Item name="Shooter" >Shooter</Dropdown.Item>
+            <Dropdown.Item name="Strategy" >Strategy</Dropdown.Item>
+            <Dropdown.Item name="Moba" >Moba</Dropdown.Item>
+            <Dropdown.Item name="Card Games" >Card Games</Dropdown.Item>
+            <Dropdown.Item name="Racing" >Racing</Dropdown.Item>
+            <Dropdown.Item name="Fighting" >Fighting</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
 
-       
-
-            {
-              this.state.gameResult1.slice(num, 6).map(element => {
-                return (
-                  <>
-                  <Store element1={element}                
-                  />
-                  </>
-                )
-              })
-            }
-
-
-   
-
-
+        {
+          this.state.gameResult1.slice(num, 6).map(element => {
+            return (
+              <>
+                <Store element1={element}
+                />
+              </>
+            )
+          })
+        }
       </div>
     )
   }

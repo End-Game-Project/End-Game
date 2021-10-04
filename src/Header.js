@@ -9,20 +9,20 @@ import LoginButton from './components/LoginButten';
 import LogoutButton from './components/LogoutButton';
 
 
-class Header extends React.Component{
-    render(){
-        return(
+class Header extends React.Component {
+    render() {
+        return (
             <div id='headDiv'>
-            <Navbar id="nav" >
-                <Link to="/" id="logo"><img id='headImg' src={logo} alt="logo"/></Link>
-                <Navbar.Brand id="title">End Game</Navbar.Brand>
-                <Link id="home" to="/">Home</Link>
-                <Link id="paddin" to="/store">Store</Link>
-                <Link id="paddin" to="/about-us">About-Us</Link>
-                <Link id="pro" to="/profile">Profile</Link>
-                <LoginButton />
-                {this.props.isAuthenticated ? <LoginButton/> : <LogoutButton/>}
-            </Navbar>
+                <Navbar id="nav" >
+                    <Link to="/" id="logo"><img id='headImg' src={logo} alt="logo" /></Link>
+                    <Navbar.Brand id="title">End Game</Navbar.Brand>
+                    <Link id="home" to="/">Home</Link>
+                    <Link id="paddin" to="/store">Store</Link>
+                    <Link id="paddin" to="/about-us">About-Us</Link>
+                    <Link id="pro" to="/profile">Profile</Link>
+                    <LoginButton />
+                    {this.props.isAuthenticated ? <LoginButton /> : <LogoutButton />}
+                </Navbar>
             </div>
 
         )

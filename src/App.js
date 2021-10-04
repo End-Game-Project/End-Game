@@ -16,26 +16,26 @@ import {
 } from "react-router-dom";
 
 class App extends React.Component {
-  
+
 
   render() {
     // const { isAuthenticated } = this.props.auth0;
-    return(
+    return (
       <>
         <Router>
-            <Header />
-            <Switch>
+          <Header />
+          <Switch>
             <Route exact path="/">
-            <HomePage/>
-              </Route>
-              <Route exact path="/profile">
-              <Profile/>
-              </Route>
-              <Route exact path="/Store">
-              <DropDown/>
-              </Route>
-            </Switch>
-            <Footer />
+              <HomePage />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route exact path="/Store">
+              <DropDown />
+            </Route>
+          </Switch>
+          <Footer />
         </Router>
       </>
     );
