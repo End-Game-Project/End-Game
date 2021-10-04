@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
 import logo from './logo.png';
 import LoginButton from './components/LoginButten';
-// import LogoutButton from './components/LogoutButton';
+import LogoutButton from './components/LogoutButton';
 
 
 class Header extends React.Component{
@@ -20,7 +20,8 @@ class Header extends React.Component{
                 <Link id="paddin" to="/store">Store</Link>
                 <Link id="paddin" to="/about-us">About-Us</Link>
                 <Link id="pro" to="/profile">Profile</Link>
-                <LoginButton id="login" />
+                <LoginButton />
+                {this.props.isAuthenticated ? <LoginButton/> : <LogoutButton/>}
             </Navbar>
             </div>
 

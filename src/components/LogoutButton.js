@@ -8,7 +8,7 @@ class LogoutButton extends React.Component{
         return isAuthenticated && (
             <button onClick={() => {
               logout({ returnTo: window.location.origin });
-            }}>Log out</button>
+            }}>Log Out</button>
           );
     }
 }

@@ -3,7 +3,8 @@ import Header from './Header';
 import { withAuth0 } from '@auth0/auth0-react';
 import Footer from './Footer';
 import Profile from './Profile';
-import LoginButton from './components/LoginButten.js'
+import './App.css'
+// import LoginButton from './components/LoginButten.js'
 
 import {
   BrowserRouter as Router,
@@ -15,14 +16,17 @@ class App extends React.Component {
   
 
   render() {
-    const { isAuthenticated } = this.props.auth0;
+    // const { isAuthenticated } = this.props.auth0;
     return(
       <>
         <Router>
             <Header />
             <Switch>
-              <Route exact path="/">
-              {isAuthenticated ? <Profile /> : <LoginButton />}
+            <Route exact path="/">
+              {/* <HomePage /> */}
+              </Route>
+              <Route exact path="/profile">
+              <Profile id='pro' />
               </Route>
             </Switch>
             <Footer />
@@ -32,4 +36,4 @@ class App extends React.Component {
   }
 }
 
-export default withAuth0(App); 
+export default withAuth0(App);
