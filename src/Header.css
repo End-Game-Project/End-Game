@@ -1,4 +1,4 @@
-img {
+#headImg{
     width: 70px;
     height: 70px;
 }
@@ -29,7 +29,7 @@ img {
     text-decoration: none;
     margin-right: -200px;
 }
-div{
+#headDiv{
     background-color: #161B22;
 }
 #pro{

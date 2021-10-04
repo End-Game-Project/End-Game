@@ -9,10 +9,10 @@ import './Footer.css';
 class Footer extends React.Component {
   render() {
     return(
-        <div>
+        <div id='Footer'>
       <Navbar >
         <Navbar.Brand id="copyright">&copy;  2021, End Game, Inc. All rights reserved. End Gmae, the End Game logo</Navbar.Brand>
-        <Link to="/"><img src={logo} alt="logo"/></Link>
+        <Link to="/"><img id='footImg' src={logo} alt="logo"/></Link>
       </Navbar>
       </div>
     );

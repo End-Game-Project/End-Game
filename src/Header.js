@@ -12,9 +12,9 @@ import LogoutButton from './components/LogoutButton';
 class Header extends React.Component{
     render(){
         return(
-            <div>
+            <div id='headDiv'>
             <Navbar id="nav" >
-                <Link to="/" id="logo"><img src={logo} alt="logo"/></Link>
+                <Link to="/" id="logo"><img id='headImg' src={logo} alt="logo"/></Link>
                 <Navbar.Brand id="title">End Game</Navbar.Brand>
                 <Link id="home" to="/">Home</Link>
                 <Link id="paddin" to="/store">Store</Link>
