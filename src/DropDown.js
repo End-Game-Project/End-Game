@@ -42,7 +42,8 @@ class App extends React.Component {
 
 
  render() {
-let num = 1;
+
+let num = 0;
 
     return (
       <div>
@@ -59,7 +60,7 @@ let num = 1;
                         <Dropdown.Item name="Shooter" >Shooter</Dropdown.Item>
                         <Dropdown.Item name="Strategy" >Strategy</Dropdown.Item>
                         <Dropdown.Item name="Moba" >Moba</Dropdown.Item>
-                        <Dropdown.Item name="Card Games" >Card Games</Dropdown.Item>
+                        <Dropdown.Item name="card" >Card Games</Dropdown.Item>
                         <Dropdown.Item name="Racing" >Racing</Dropdown.Item>
                         <Dropdown.Item name="Fighting" >Fighting</Dropdown.Item>
                     </Dropdown.Menu>
@@ -68,7 +69,7 @@ let num = 1;
        
 
             {
-              this.state.gameResult1.slice(num, 6).map(element => {
+              this.state.gameResult1.map(element => {
                 return (
                   <>
                   <Store element1={element}                

@@ -14,7 +14,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://s3-eu-central-1.amazonaws.com/www-staging.esports.com/WP%20Media%20Folder%20-%20esports-com//var/app/current/web/app/uploads/2021/03/Downfall-of-RTS-1-720x405.jpg"
+            src="https://wallpapercave.com/wp/wp2287973.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -25,7 +25,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://w0.peakpx.com/wallpaper/732/740/HD-wallpaper-s-t-a-l-k-e-r-shooting-soldier-action-video-game-stalker-stalker-clear-sky-adventure-weapon.jpg"
+            src="https://wallpaper.dog/large/11025624.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
@@ -36,7 +36,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://www.esportstalk.com/wp-content/uploads/2020/03/Top-Moba.jpg"
+            src="https://images8.alphacoders.com/115/thumb-1920-1156676.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -47,7 +47,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://www.neuf.tv/wp-content/uploads/2021/04/11-of-the-best-MMO-games-for-iOS-and-Android-2021.jpg"
+            src="https://wallpapercave.com/wp/wp8628975.png"
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -58,7 +58,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://www.enduins.com/wp-content/uploads/2020/01/Upcoming-mmorpg-mobile-games.jpg"
+            src="https://i.pinimg.com/originals/17/0a/bd/170abd6694150949fad3d8c43289c50d.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -69,7 +69,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://wallpaper.dog/large/5511021.jpg"
+            src="https://cdn4.idcgames.com/storage/image/1106/game_home_bg_section_2/default.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -80,7 +80,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://images.nintendolife.com/a32ebc9eba246/best-racing-games-nintendo-switch.original.jpg"
+            src="https://images5.alphacoders.com/929/thumb-1920-929552.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
@@ -91,7 +91,7 @@ class HomePahe extends React.Component {
 
         <Carousel.Item id = "Item">
           <img
-            src="https://images.nintendolife.com/513886e735224/best-fighters.original.jpg"
+            src="https://wallpapercave.com/wp/84S1fUU.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
