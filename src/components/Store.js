@@ -21,8 +21,6 @@ class Store extends React.Component {
             <div>
 
 
-      
-
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={this.props.element1.thumbnail} />
                     <Card.Body>
