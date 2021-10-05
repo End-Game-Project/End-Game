@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import ModalCards from './ModalCards.js'
-import EditComponent from './EditComponent.js';
 class Store extends React.Component {
 
     constructor(props) {
@@ -13,12 +12,12 @@ class Store extends React.Component {
             id: 0,
             email: this.props.auth0.user.email,
             added: {},
-            showModel: false
-
+            showModel: false,
+            didPlayed:false
         }
     }
     showHandler = () => {
-        console.log("showwwwwwwww model")
+        console.log("show model")
         this.setState({
             showModel: true
         })
@@ -53,6 +52,10 @@ class Store extends React.Component {
         })
     }
 
+  
+        
+
+
     render() {
 
 
@@ -68,31 +71,34 @@ class Store extends React.Component {
                                 <p style={{ hight: "90px" }}> {this.props.element1.short_description}</p>
                             </Card.Text>
 
-                            <Button style={{ marginTop: "7px", marginLeft: "150px" }} onClick={this.idFun} variant="warning"><strong>add to favorite</strong></Button>
-                            <Button onClick={this.showHandler}>Show Model</Button>
+                            {/* <Button style={{ marginTop: "7px", marginLeft: "150px" }} onClick={this.idFun} variant="warning"><strong>add to favorite</strong></Button> */}
+                            <Button style={{marginLeft:"130px"}} onClick={this.showHandler}>See more</Button>
                         </Card.Body>
                     </Card>
 
                 </div>
 
                 {this.state.showModel &&
-                    <>
-                        <ModalCards show={this.state.showModel} closeHandler={this.closeHandler}
-                            // title= {this.props.element1.title}
-                            // thumbnail={this.props.element1.thumbnail}
-                            element1={this.props.element1}
-                        // description={this.props.element1.short_description}
-                        />
 
-                        <EditComponent show={this.state.showModel} closeHandler={this.closeHandler}
-                            // title= {this.props.element1.title}
-                            // thumbnail={this.props.element1.thumbnail}
-                            element1={this.props.element1}
-                        // description={this.props.element1.short_description}
-                        />
-                    </>
+                    <ModalCards show={this.state.showModel} closeHandler={this.closeHandler}
+                        // title= {this.props.element1.title}
+                        // thumbnail={this.props.element1.thumbnail}
+                        element1={this.props.element1}
+                    // description={this.props.element1.short_description}
+                    />
+
                 }
 
+                {/* {this.state.showModel &&
+<>
+                    <EditComponent show={this.state.showModel} closeHandler={this.closeHandler}
+                        // title= {this.props.element1.title}
+                        // thumbnail={this.props.element1.thumbnail}
+                        element1={this.props.element1}
+                    // description={this.props.element1.short_description}
+                    />
+</>
+                } */}
 
             </>
         )
