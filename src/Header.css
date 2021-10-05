@@ -10,37 +10,40 @@
 }
 
 #home{
-    padding-left: 15px;
+    /* background-color: red; */
+    /* padding-left: 15px; */
+    margin-left: 45px;
+
     text-decoration: none;
-    color: white;
+    color: white solid;
     font-size: 20px;
     font-family: fantasy;
 
 }
 #paddin{
+    margin-left: 15px;
+    /* justify-content: space-evenly; */
     padding-left: 10px;
     text-decoration: none;
-    color: white;
+    color: white solid;
     font-size: 20px;
     font-family: fantasy;
 
 }
 #login{
     text-decoration: none;
-    margin-right: -200px;
 }
 #headDiv{
     background-color: #161B22;
 }
 #pro{
-    padding-left: 10px;
-margin-right: 1350px ;
+    /* padding-left: 10px; */
+    margin-left: 25px;
+
+margin-right: 1240px ;
     text-decoration: none;
-    color: white;
+    color: white solid;
     font-size: 20px;
     font-family: fantasy;
 }
 
-/* #nav{
-    border: 1px solid red;
-} */

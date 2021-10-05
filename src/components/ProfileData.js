@@ -1,35 +1,21 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Button } from 'react-bootstrap/'
-import EditComponent from './EditComponent';
-
+import FavData from './FavData';
 
 class ProfileData extends Component {
     constructor(props) {
         super(props);
         this.state = {
             FavData: [],
-            showModel: false
+            didPlayed: false,
+            updateData: []
         }
     }
 
 
 
-    showHandler = () => {
-        console.log("show modellllllllllllllllllll")
-        this.setState({
-            showModel: true
-        })
-    }
 
-    closeHandler = () => {
-        console.log("close model")
-
-        this.setState({
-            showModel: false
-        })
-    }
 
 
     componentDidMount = async () => {
@@ -48,7 +34,7 @@ class ProfileData extends Component {
         })
         console.log(gameResult.data);
 
-        console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
+        // console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
     }
 
     deleteFavGame = async (gameId) => {
@@ -59,8 +45,30 @@ class ProfileData extends Component {
         });
     }
 
-    render() {
+    //update function  
+    updateFavList = async (e) => {
+        e.preventDefault();
+        console.log('update function')
+        let gameInfo = {
+            email: this.state.email,
+            // id: this.props.element1.id,
+            // title: this.props.element1.title,
+            // thumbnail: this.props.element1.thumbnail,
+            // short_description: this.props.element1.short_description,
+            // game_url: this.props.element1.game_url,
+            didPlayed: this.state.didPlayed
+        }
 
+        let newUpdatedList = await axios.put(`http://localhost:3002/updateList?email=${this.state.email}`, gameInfo);
+        await this.setState({
+            updateData: newUpdatedList.data
+        });
+        console.log("updateeeeeeeeee" + this.state.updateData);
+    }
+
+
+
+    render() {
 
         return (
             <>
@@ -71,20 +79,8 @@ class ProfileData extends Component {
                 <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }} >
                     {this.state.FavData.map((element) => {
                         return (
-                            <Card style={{ width: '20rem', margin: "10px", backgroundColor: "#c7d5e0" }}>
-                                <Card.Img variant="top" src={element.thumbnail} />
-                                <Card.Body>
-                                    <Card.Title>{element.title}</Card.Title>
-                                    <Card.Text>
-                                        {element.short_description}
-                                    </Card.Text>
-                                    <Card.Footer class="btn-group" role="group" aria-label="Basic example">
-                                        <Button style={{ color: "white" }} variant="dark" onClick={() => { this.deleteFavGame(element._id) }}>Remove </Button>
-                                        <Button style={{ color: "black", marginLeft: "20px" }} onClick={this.showHandler} variant="dark">✒️</Button>
-                                        <Button style={{ color: "white", marginLeft: "20px" }} href={element.game_url} variant="dark">play now</Button>
-                                    </Card.Footer>
-                                </Card.Body>
-                            </Card>
+
+                            <FavData element={element} updateFavList={this.updateFavList} deleteFavGame={this.deleteFavGame}/>
 
                         )
 
@@ -93,18 +89,21 @@ class ProfileData extends Component {
                 </div>
                 <hr style={{ color: "red", border: "3px solid", marginTop: "50px" }}>
                 </hr>
+               
+               
+                {/* {this.state.updateData.map((elemet)=>{
+    return(
 
-
-
-                {/* {this.state.showModel &&
-                {
+    ) */}
+                {/* })} */}
+                {/* {
                     this.state.FavData.map((element) => {
                         return (
 
-                            <EditComponent show={this.state.showModel} closeHandler={this.closeHandler}
+                             <EditComponent show={this.state.showModel} closeHandler={this.closeHandler}
                                 // title= {this.props.element1.title}
                                 // thumbnail={this.props.element1.thumbnail}
-                                element={this.state.FavData}
+                                element={this.state.updateData}
 
                             // description={this.props.element1.short_description}
                             />
@@ -113,7 +112,13 @@ class ProfileData extends Component {
                         )
                     })
 
-                }
+                } */}
+
+
+
+                {/* <Button onClick={this.updateFavList}></Button> */}
+                {/* {this.state.showModel &&
+                
 
                 } */}
             </>
