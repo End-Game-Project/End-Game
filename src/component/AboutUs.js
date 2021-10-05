@@ -72,29 +72,98 @@
 // }
 // export default AboutUs;
 
-import React, {useState} from 'react'
+import React from 'react'
 import './AboutUs.css';
 import hesham from './images/hesham.jpg';
 import tariq from './images/tariq.jpg';
 import ismaeel from './images/ismaeel.jpg';
 import ahmad from './images/ahmad.jpg';
 // import qamar from './images/qamar.jpg';
+// class teamCard extends Component {
+// static defaultProps = {
+// team : [
+// {src: {ahmad}, name: 'Ahmed Abu Romoh', job: 'aaaaaa', description: 'bbbbbbbbb'}
+// ]
+// };
 
-function AboutUs({name, job, about}) {
+// render() {
+// return (
+// <div>
+// {this.props.something.map((p) => (
+// <card name={p.name} job= {p.job} description= {p.description}
+// ))}
+
+function AboutUs({name, job, about, img}) {
   return (
-    <div className='card'>
-      <div className='upper-container'>
-        <div className='image-container'>
-          <img src={ahmad} height="100px" width="100px" />
+    <><div id='all'>
+      <div id='first'>
+        <div className='card'>
+        <div className='upper-container'>
+          <div className='image-container'>
+            {/* <img src={qamar} height="100px" width="100px" alt='' /> */}
+          </div>
         </div>
-      </div>
-      <div className="lower-container">
-        <h3>{name}</h3>
-        <h4>{job}</h4>
-        <p>{about}</p>
-        <button>Visit Profile</button>
-      </div>
-    </div>
+        <div className="lower-container">
+          <h3>Qamar Alkhatib</h3>
+          <h4>{job}</h4>
+          <p>{about}</p>
+          <button>Visit Profile</button>
+        </div>
+      </div><div className='card'>
+          <div className='upper-container'>
+            <div className='image-container'>
+              <img src={tariq} height="100px" width="100px" alt='' />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3>Tariq Etoum</h3>
+            <h4>{job}</h4>
+            <p>{about}</p>
+            <button>Visit Profile</button>
+          </div>
+          </div>
+        </div>
+        <div className='card'>
+          <div className='upper-container'>
+            <div className='image-container'>
+              <img src={hesham} height="100px" width="100px" alt='' />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3>Hesham Hassan</h3>
+            <h4>{job}</h4>
+            <p>{about}</p>
+            <button>Visit Profile</button>
+          </div>
+        </div>
+        
+        </div><div className='card'>
+          <div className='upper-container'>
+            <div className='image-container'>
+              <img src={ismaeel} height="100px" width="100px" alt='' />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3>Ismaeel Ramadan</h3>
+            <h4>{job}</h4>
+            <p>{about}</p>
+            <button>Visit Profile</button>
+          </div>
+          </div>
+        <div className='card'>
+          <div className='upper-container'>
+            <div className='image-container'>
+              <img src={ahmad} height="100px" width="100px" alt='' />
+            </div>
+          </div>
+          <div className="lower-container">
+            <h3>Ahmad AbuRumuh</h3>
+            <h4>developer</h4>
+            <p>aaaaaaaaaaaaaaaaaaaaaaaa</p>
+            <button>Visit Profile</button>
+          </div>
+        
+      </div></>
   )
 }
 export default AboutUs

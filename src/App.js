@@ -1,12 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from 'react'
+import React from 'react'
 import AboutUs from './component/AboutUs';
 function App() {
-  const [name, setName] = useState('your name');
-  const [job, setJob] = useState('job title');
-  const [about, setAbout] = useState("aaaaaaa");
-
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -23,7 +19,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <AboutUs name={'ahmad'} job={job} about={about}/>
+      <AboutUs/>
     </div>
   );
 }
