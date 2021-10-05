@@ -36,41 +36,41 @@ class RandomGames extends Component {
         console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
     }
     render() {
-        
+
         const shuffled = this.state.fullgame.sort(() => 0.5 - Math.random());
         let num = 0;
 
         return (
             <>
-            <h2 style={{color:"white", marginLeft:'30px', marginTop:'20px', marginBottom:'20px'}}>Recent Games</h2>
+                <h2 style={{ color: "white", marginLeft: '30px', marginTop: '20px', marginBottom: '20px' }}>Recent Games</h2>
 
-            <div style={{display:"flex",flexWrap:"wrap",justifyContent:"space-evenly"}}>
-                {
-                    shuffled.slice(num, 6).map(element => {
+                <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
+                    {
+                        shuffled.slice(num, 6).map(element => {
 
-                        return (
-                            <>
-                            
-                                        <Card style={{ margin: '8px', width: '600px' }} className="bg-dark text-white">
-                                            <Card.Img src={element.thumbnail} alt="Card image" />
-                                            <Card.ImgOverlay>
-                                                <div style={{backgroundColor:"rgba(0, 0, 0, 0.4)",marginTop:"175px"}}>
+                            return (
+                                <>
+
+                                    <Card style={{ margin: '8px', width: '600px' }} className="bg-dark text-white">
+                                        <Card.Img src={element.thumbnail} alt="Card image" />
+                                        <Card.ImgOverlay>
+                                            <div style={{ backgroundColor: "rgba(0, 0, 0, 0.4)", marginTop: "175px" }}>
                                                 <Card.Title> {element.title}</Card.Title>
                                                 <Card.Text  >
                                                     {element.short_description}
                                                 </Card.Text>
-                                                </div>
-                                                <Button style={{marginTop:"7px",marginLeft:"220px"}} href={element.game_url} variant="warning"><strong>Try it now</strong></Button>
-                                            </Card.ImgOverlay>
-                                        </Card>
-                                 
-                            </>
-                        )
-                    })
-                }
+                                            </div>
+                                            <Button style={{ marginTop: "7px", marginLeft: "220px" }} href={element.game_url} variant="warning"><strong>Try it now</strong></Button>
+                                        </Card.ImgOverlay>
+                                    </Card>
+
+                                </>
+                            )
+                        })
+                    }
 
 
-            </div>
+                </div>
             </>
         )
     }

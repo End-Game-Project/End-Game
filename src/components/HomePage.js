@@ -3,10 +3,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from 'react-bootstrap/Button'
 import './HomePage.css'
 import Carousel from 'react-bootstrap/Carousel'
+import { withRouter } from 'react-router-dom';
 
 
 
 class HomePahe extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        searchQuery: ''
+      }
+    }
+  storeFun = async (query)=>{
+    console.log("bay");
+console.log("query"+query);
+await this.setState({
+  searchQuery:query
+})
+console.log("hellloooooooo"+this.state.searchQuery);
+    let path = `/store`;
+    this.props.history.push(path);
+    this.props.storeBtn(this.state.searchQuery)
+  }
   // render
   render() {
     return (
@@ -19,7 +37,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5>Strategy</h5>
-            <Button href={"./Store"} variant="outline-primary"  onClick={this.props.storeFun}>Explor!</Button>
+            <Button name="Strategy"  variant="outline-primary"  onClick={()=>{this.storeFun("Strategy")}}>Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -30,7 +48,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5>Shooter</h5>
-            <Button variant="outline-primary">Explor!</Button>
+            <Button variant="outline-primary" onClick={()=>{this.storeFun("Shooter")}}>Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -41,7 +59,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Moba</h5>
-            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
+            <Button   variant="outline-primary" onClick={()=>{this.storeFun("Moba")}} >Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -52,7 +70,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >MMO</h5>
-            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
+            <Button  variant="outline-primary" onClick={()=>{this.storeFun("MMO")}} >Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -63,7 +81,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >MMORPG</h5>
-            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
+            <Button   variant="outline-primary" onClick={()=>{this.storeFun("MMORPG")}} >Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -74,7 +92,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Card Games</h5>
-            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
+            <Button   variant="outline-primary" onClick={()=>{this.storeFun("card")}} >Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -85,7 +103,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Racing </h5>
-            <Button  href={"./Store"} variant="outline-primary">Explor!</Button>
+            <Button name="Racing"  variant="outline-primary"  onClick={()=>{this.storeFun("Racing")}}>Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -96,7 +114,7 @@ class HomePahe extends React.Component {
           />
           <Carousel.Caption>
             <h5 >Fighting</h5>
-            <Button name="Fighting" href={"./Store"} variant="outline-primary" onClick={this.props.storeFun}>Explor!</Button>
+            <Button name="Fighting"  variant="outline-primary"  onClick={()=>{this.storeFun("Fighting")}}>Explor!</Button>
           </Carousel.Caption>
         </Carousel.Item>
  
@@ -105,4 +123,4 @@ class HomePahe extends React.Component {
   }
 }
 
-export default HomePahe;
+export default withRouter (HomePahe);
