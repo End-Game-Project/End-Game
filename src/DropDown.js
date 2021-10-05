@@ -2,12 +2,14 @@
 import React from 'react'
 import Store from './components/Store'
 import Dropdown from 'react-bootstrap/Dropdown'
-import './dropDown.css'
-import RandomGames from './components/RandomGames'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ModalCards from './components/ModalCards.js'
+
 class App extends React.Component {
 
   
+ 
+
 
   render() {
     //  const shuffled =this.state.fullgame.sort(() => 0.5 - Math.random());
@@ -16,12 +18,12 @@ class App extends React.Component {
 
     return (
       <div>
-        <h2 id='Storeh2'>Store page </h2>
+        <h2 id='Storeh2' style={{ color: 'white', marginLeft: '30px' }}>Featured Games </h2>
 
 
 
         <Dropdown >
-          <Dropdown.Toggle variant="success" id="dropdown-basic" >
+          <Dropdown.Toggle variant="primary" size="lg" id="dropdown-basic" style={{ marginLeft: '30px', marginTop: '20px' }}>
             Category
           </Dropdown.Toggle>
 
@@ -38,16 +40,25 @@ class App extends React.Component {
           </Dropdown.Menu>
         </Dropdown>
 
-        {
-          this.props.gameResult1.slice(num, 20).map(element => {
-            return (
-              <>
-                <Store element1={element}
-                />
-              </>
-            )
-          })
-        }
+       
+
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
+
+          {
+            this.props.gameResult1.slice(num, 20).map(element => {
+              return (
+                <>
+                  <div >
+                    <Store element1={element}
+
+                    />
+                  </div>
+                </>
+              )
+            })
+          }
+
+        </div>
 
 
 

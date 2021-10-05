@@ -2,13 +2,17 @@ h5{
     color: azure;
 }
 #Item img{
-    width: 97%;
-    height: 800px;
+    width: 93%;
+
+    height: 820px;
     /* border-radius: 30%; */
 }
 
 #Item{
-    margin: 25px;
+    margin-top: 50px;
+
+    margin-left: 60px;
+    /* margin: 25px; */
 }
 body{
     background-color: #0D1117;
