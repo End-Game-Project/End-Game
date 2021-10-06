@@ -18,12 +18,12 @@ class RandomGames extends Component {
     }
 
     componentDidMount = async () => {
-        console.log("asdfghjkllkjhgfds");
+        // console.log("asdfghjkllkjhgfds");
         let gameUrl = `http://localhost:3002/store`
         let gameResult = await axios.get(gameUrl)
-        console.log(gameResult.data);
+        // console.log(gameResult.data);
 
-        console.log(gameUrl);
+        // console.log(gameUrl);
 
 
         await this.setState({
@@ -31,9 +31,9 @@ class RandomGames extends Component {
             fullgame: gameResult.data,
 
         })
-        console.log(gameResult.data);
+        // console.log(gameResult.data);
 
-        console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
+        // console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
     }
     render() {
 
@@ -42,7 +42,7 @@ class RandomGames extends Component {
 
         return (
             <>
-                <h2 style={{ color: "white", marginLeft: '30px', marginTop: '20px', marginBottom: '20px' }}>Recent Games</h2>
+                <h2 style={{ color: "white", marginLeft: '30px', marginTop: '50px', marginBottom: '35px' ,borderLeft:"10px solid #690505",marginRight:"30px"}}>   Recent Games</h2>
 
                 <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
                     {

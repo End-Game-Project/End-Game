@@ -4,18 +4,20 @@
     font-family: fantasy;
     color: white;
     clear:both;
-
+    
 }
 
 #footImg{
-    width: 150px;
+    margin-top: 50px;
+    width: 140px;
     height: 150px;
 }
 #Footer {
-    clear:both;
+    
     position:relative;
-    bottom:0;
-    width:0%;
-    height:10px;   /* Height of the footer */
+    margin-top: 100px;
+    /* bottom:-50px; */
+    height:100px;   /*Height of the footer*/
     background-color: #161B22;
+    /* padding-bottom: 10px; */
 } 

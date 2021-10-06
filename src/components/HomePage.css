@@ -16,4 +16,25 @@ h5{
 }
 body{
     background-color: #0D1117;
+    padding-bottom: 50px;
+}
+.explore{
+    margin-bottom: 350px;
+    font-weight: 900;
+
+}
+.explore h5{
+    background-color: black;
+    font-size: 150px;
+    opacity: 0.6;
+    font-weight: 900;
+    margin-left: -100px;
+    
+}
+.but{
+    padding: 20px 50px 20px 50px;
+    font-size: 25px;
+    margin-left: -50px;
+
+
 }
