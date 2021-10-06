@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from './logo.png';
 import { Link } from "react-router-dom";
 import './Footer.css';
-
+//nothing
 
 class Footer extends React.Component {
   render() {
