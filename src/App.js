@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    let gameUrl = `http://localhost:3002/store`
+    let gameUrl = `${process.env.REACT_APP_ATLASS}/store`
     let gameResult = await axios.get(gameUrl)
    
     this.setState({
@@ -44,7 +44,7 @@ class App extends React.Component {
       searchQuery: name
     })
 
-    let gameUrl = `http://localhost:3002/getGame?category=${this.state.searchQuery}`
+    let gameUrl = `${process.env.REACT_APP_ATLASS}/getGame?category=${this.state.searchQuery}`
     let gameResult = await axios.get(gameUrl)
  
     this.setState({
@@ -58,7 +58,7 @@ class App extends React.Component {
       searchQuery: e.target.name
     })
     if (this.state.searchQuery === 'ALL') {
-      let gameUrl = `http://localhost:3002/store`
+      let gameUrl = `${process.env.REACT_APP_ATLASS}/store`
       let gameResult = await axios.get(gameUrl)
 
       this.setState({
@@ -66,7 +66,7 @@ class App extends React.Component {
       })
     }
     else {
-      let gameUrl = `http://localhost:3002/getGame?category=${this.state.searchQuery}`
+      let gameUrl = `${process.env.REACT_APP_ATLASS}/getGame?category=${this.state.searchQuery}`
       let gameResult = await axios.get(gameUrl)
    
       this.setState({

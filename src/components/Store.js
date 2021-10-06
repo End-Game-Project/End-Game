@@ -51,7 +51,7 @@ class Store extends React.Component {
         }
         // console.log("gameeeeeeeeeeeeeeeee" + this.state.email);
 
-        let newGameInfo = await axios.post(`http://localhost:3002/addToFav`, gameInfo)
+        let newGameInfo = await axios.post(`${process.env.REACT_APP_ATLASS}/addToFav`, gameInfo)
         // console.log("new gameeeeeeeeeeeeeee" + newGameInfo);
         this.setState({
             added: newGameInfo.data,
