@@ -19,7 +19,7 @@ class RandomGames extends Component {
 
     componentDidMount = async () => {
         // console.log("asdfghjkllkjhgfds");
-        let gameUrl = `http://localhost:3002/store`
+        let gameUrl = `${process.env.REACT_APP_ATLASS}/store`
         let gameResult = await axios.get(gameUrl)
         // console.log(gameResult.data);
 

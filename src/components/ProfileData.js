@@ -3,7 +3,7 @@ import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { withAuth0 } from "@auth0/auth0-react";
 import FavData from './FavData';
-
+//nothing
 class ProfileData extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ class ProfileData extends Component {
 
 
     componentDidMount = async () => {
-        let gameUrl = `http://localhost:3002/getFav?email=${this.props.email}`
+        let gameUrl = `${process.env.REACT_APP_ATLASS}/getFav?email=${this.props.email}`
         let gameResult = await axios.get(gameUrl)
         console.log(gameResult.data);
 
@@ -37,7 +37,7 @@ class ProfileData extends Component {
     }
 
     deleteFavGame = async (gameId) => {
-        let newDeletedGame = await axios.delete(`http://localhost:3002/deleteGame?email=${this.props.email}&gameId=${gameId}`);
+        let newDeletedGame = await axios.delete(`${process.env.REACT_APP_ATLASS}/deleteGame?email=${this.props.email}&gameId=${gameId}`);
         this.setState({
             FavData: newDeletedGame.data
         });
@@ -55,7 +55,7 @@ class ProfileData extends Component {
             didPlayed: this.state.didPlayed
         }
         console.log("playddddddddddddddddd" + this.state.didPlayed);
-        let newUpdatedList = await axios.put(`http://localhost:3002/updateList?email=${this.state.email}`, gameInfo);
+        let newUpdatedList = await axios.put(`${process.env.REACT_APP_ATLASS}/updateList?email=${this.state.email}`, gameInfo);
         await this.setState({
             FavData: newUpdatedList.data
         });
