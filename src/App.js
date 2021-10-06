@@ -15,6 +15,7 @@ import {
 import RandomGames from './components/RandomGames';
 import LoginButton from './components/LoginButten';
 import AlertFun from './components/AlertFun';
+import AboutUs from './components/AboutUs'
 
 
 class App extends React.Component {
@@ -30,8 +31,7 @@ class App extends React.Component {
   async componentDidMount() {
     let gameUrl = `http://localhost:3002/store`
     let gameResult = await axios.get(gameUrl)
-    // console.log(gameResult.data);
-    // console.log(gameUrl);
+   
     this.setState({
       gameResult1: gameResult.data,
     })
@@ -39,33 +39,28 @@ class App extends React.Component {
   }
 
   storeBtn = async (name) => {
-    // console.log("hi");
-    // console.log("name" + name);
+
     await this.setState({
       searchQuery: name
     })
 
     let gameUrl = `http://localhost:3002/getGame?category=${this.state.searchQuery}`
     let gameResult = await axios.get(gameUrl)
-    // console.log(gameResult.data);
-    // console.log(gameUrl);
+ 
     this.setState({
       gameResult1: gameResult.data,
     })
-    // console.log(gameResult.data);
   }
 
   storeFun = async (e) => {
     e.preventDefault();
-    // console.log('asdasdasdasdasdasdasdasd');
     await this.setState({
       searchQuery: e.target.name
     })
     if (this.state.searchQuery === 'ALL') {
       let gameUrl = `http://localhost:3002/store`
       let gameResult = await axios.get(gameUrl)
-      // console.log(gameResult.data);
-      // console.log(gameUrl);
+
       this.setState({
         gameResult1: gameResult.data,
       })
@@ -73,18 +68,14 @@ class App extends React.Component {
     else {
       let gameUrl = `http://localhost:3002/getGame?category=${this.state.searchQuery}`
       let gameResult = await axios.get(gameUrl)
-      // console.log(gameResult.data);
-      // console.log(gameUrl);
+   
       this.setState({
         gameResult1: gameResult.data,
       })
-      // console.log(gameResult.data);
     }
-    // console.log('qqqqqqqqqqqqqqqqqqqqqq' + this.state.gameResult1);
   }
   render() {
     const { isAuthenticated } = this.props.auth0;
-// console.log("anything"+isAuthenticated);
     return (
       <>
         <Router>
@@ -98,10 +89,10 @@ class App extends React.Component {
               {!isAuthenticated ?  <AlertFun/> : <Profile /> }
             </Route>
 
-
-            {/* <Route  path="/profile">
-             <Profile /> 
-            </Route> */}
+            <Route  path="/about-us">
+              <AboutUs/>
+            </Route>
+            
             <Route exact path="/Store">
 
               <section ><RandomGames /> </section>
