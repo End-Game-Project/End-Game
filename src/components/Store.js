@@ -10,45 +10,52 @@ class Store extends React.Component {
         super(props);
         this.state = {
             id: 0,
-            email: this.props.auth0.user.email,
             added: {},
             showModel: false,
-            didPlayed:false
+            didPlayed:false,
+            // email:''
         }
     }
     showHandler = () => {
-        console.log("show model")
+        // console.log("show model")
         this.setState({
             showModel: true
         })
     }
 
     closeHandler = () => {
-        console.log("close model")
+        // console.log("close model")
 
         this.setState({
             showModel: false
         })
     }
-
+    isplayed=(boolean)=>{
+        // console.log("inside function",boolean);
+            this.setState({
+            didPlayed:boolean
+            })
+        }
 
     idFun = async (e) => {
         e.preventDefault();
-        console.log("idddddddddddddd" + this.props.element1.id);
+        // console.log("idddddddddddddd" + this.props.element1.id);
         let gameInfo = {
-            email: this.state.email,
+            email: this.props.auth0.user.email,
             id: this.props.element1.id,
             title: this.props.element1.title,
             thumbnail: this.props.element1.thumbnail,
             short_description: this.props.element1.short_description,
+            didPlayed:false,
             game_url: this.props.element1.game_url
         }
-        console.log("gameeeeeeeeeeeeeeeee" + this.state.email);
+        // console.log("gameeeeeeeeeeeeeeeee" + this.state.email);
 
         let newGameInfo = await axios.post(`http://localhost:3002/addToFav`, gameInfo)
-        console.log("new gameeeeeeeeeeeeeee" + newGameInfo);
+        // console.log("new gameeeeeeeeeeeeeee" + newGameInfo);
         this.setState({
-            added: newGameInfo.data
+            added: newGameInfo.data,
+            // email:this.props.auth0.user.email
         })
     }
 
@@ -63,7 +70,7 @@ class Store extends React.Component {
             <>
 
                 <div>
-                    <Card style={{ width: '25rem', margin: "8px", hight: "300px", marginTop: "30px" }}>
+                    <Card style={{ width: '25rem', margin: "8px", hight: "300px", marginTop: "30px" ,backgroundColor:"#6905057a",color:"#f5f5f5"}}>
                         <Card.Img variant="top" src={this.props.element1.thumbnail} />
                         <Card.Body>
                             <Card.Title> {this.props.element1.title}</Card.Title>
@@ -83,7 +90,7 @@ class Store extends React.Component {
                     <ModalCards show={this.state.showModel} closeHandler={this.closeHandler}
                         // title= {this.props.element1.title}
                         // thumbnail={this.props.element1.thumbnail}
-                        element1={this.props.element1}
+                        element1={this.props.element1} idFun={this.idFun}
                     // description={this.props.element1.short_description}
                     />
 

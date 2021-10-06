@@ -18,12 +18,12 @@ class App extends React.Component {
 
     return (
       <div>
-        <h2 id='Storeh2' style={{ color: 'white', marginLeft: '30px' }}>Featured Games </h2>
+        <h2 id='Storeh2' style={{ color: 'white', marginLeft: '30px',borderLeft:"10px solid #690505" , marginTop:"50px",marginBottom:"30px" }}>Featured Games </h2>
 
 
-
-        <Dropdown >
-          <Dropdown.Toggle variant="primary" size="lg" id="dropdown-basic" style={{ marginLeft: '30px', marginTop: '20px' }}>
+        <div style={{marginLeft:"1750px",marginBottom:"15px"}}>
+           <Dropdown  >
+          <Dropdown.Toggle variant="primary" size="lg" id="dropdown-basic" >
             Category
           </Dropdown.Toggle>
 
@@ -39,6 +39,9 @@ class App extends React.Component {
             <Dropdown.Item name="Fighting" >Fighting</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
+        </div>
+
+       
 
        
 

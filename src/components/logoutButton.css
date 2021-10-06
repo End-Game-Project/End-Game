@@ -1,7 +1,8 @@
 #logoutButt{
     padding: 5px 10px;
-    background-color: #356193;
+    background-color: #0d67ee;
     color: white;
     border-radius: 4px;    
     float: right;
+    font-weight: 700;
 }
