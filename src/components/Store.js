@@ -91,21 +91,11 @@ class Store extends React.Component {
                         // title= {this.props.element1.title}
                         // thumbnail={this.props.element1.thumbnail}
                         element1={this.props.element1} idFun={this.idFun}
-                    // description={this.props.element1.short_description}
                     />
 
                 }
 
-                {/* {this.state.showModel &&
-<>
-                    <EditComponent show={this.state.showModel} closeHandler={this.closeHandler}
-                        // title= {this.props.element1.title}
-                        // thumbnail={this.props.element1.thumbnail}
-                        element1={this.props.element1}
-                    // description={this.props.element1.short_description}
-                    />
-</>
-                } */}
+             
 
             </>
         )
