@@ -1,0 +1,40 @@
+h5{
+    color: azure;
+}
+#Item img{
+    width: 93%;
+
+    height: 820px;
+    /* border-radius: 30%; */
+}
+
+#Item{
+    margin-top: 50px;
+
+    margin-left: 60px;
+    /* margin: 25px; */
+}
+body{
+    background-color: #0D1117;
+    padding-bottom: 50px;
+}
+.explore{
+    margin-bottom: 350px;
+    font-weight: 900;
+
+}
+.explore h5{
+    background-color: black;
+    font-size: 150px;
+    opacity: 0.6;
+    font-weight: 900;
+    margin-left: -100px;
+    
+}
+.but{
+    padding: 20px 50px 20px 50px;
+    font-size: 25px;
+    margin-left: -50px;
+
+
+}
